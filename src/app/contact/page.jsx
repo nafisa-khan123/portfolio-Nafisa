@@ -57,16 +57,18 @@ export default function Contact() {
     {
       icon: <FaBriefcase className="text-2xl text-white" />,
       title: 'LinkedIn',
-      value: 'linkedin.com/in/nafisa-khan',
+      value: 'linkedin.com/in/nafisa-khan-26a730399',
       description: 'Let\'s connect professionally',
-      color: 'from-indigo-500 to-indigo-600'
+      color: 'from-indigo-500 to-indigo-600',
+      link: 'https://www.linkedin.com/in/nafisa-khan-26a730399/'
     },
     {
       icon: <FaGithub className="text-2xl text-white" />,
       title: 'GitHub',
-      value: 'github.com/nafisa-khan',
+      value: 'github.com/nafisa-khan123',
       description: 'Check out my code and projects',
-      color: 'from-gray-600 to-gray-700'
+      color: 'from-gray-600 to-gray-700',
+      link: 'https://github.com/nafisa-khan123'
     }
   ];
 
@@ -85,6 +87,18 @@ export default function Contact() {
       <div className="absolute bottom-40 left-20 opacity-15">
         <AnimatedCircle size="medium" />
       </div>
+      
+      {/* 3D Floating Elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/30 rounded-full blur-xl animate-float"></div>
+      <div className="absolute top-40 right-32 w-40 h-40 bg-purple-500/30 rounded-full blur-2xl animate-float-delayed"></div>
+      <div className="absolute bottom-32 left-1/4 w-36 h-36 bg-cyan-500/30 rounded-full blur-xl animate-float-slow"></div>
+      <div className="absolute top-1/2 right-20 w-28 h-28 bg-pink-500/30 rounded-full blur-lg animate-float"></div>
+      <div className="absolute bottom-20 right-1/3 w-40 h-40 bg-indigo-500/30 rounded-full blur-2xl animate-float-delayed"></div>
+      
+      {/* Floating Particles */}
+      <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-blue-400 rounded-full animate-pulse shadow-lg shadow-blue-400/50"></div>
+      <div className="absolute top-2/3 right-1/4 w-3 h-3 bg-purple-400 rounded-full animate-pulse delay-300 shadow-lg shadow-purple-400/50"></div>
+      <div className="absolute bottom-1/3 left-1/2 w-3 h-3 bg-cyan-400 rounded-full animate-pulse delay-700 shadow-lg shadow-cyan-400/50"></div>
 
       {/* Hero Section */}
       <section className="py-16 px-4 relative z-10">
@@ -107,9 +121,12 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col gap-6 mb-16 max-w-2xl mx-auto">
             {contactMethods.map((method, index) => (
-              <div
+              <a
                 key={index}
-                className="group bg-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 cursor-pointer border border-gray-700"
+                href={method.link || '#'}
+                target={method.link ? '_blank' : '_self'}
+                rel={method.link ? 'noopener noreferrer' : ''}
+                className="group bg-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 cursor-pointer border border-gray-700 block"
               >
                 <div className={`w-16 h-16 bg-gradient-to-r ${method.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   {method.icon}
@@ -117,7 +134,7 @@ export default function Contact() {
                 <h3 className="text-xl font-bold text-white mb-2">{method.title}</h3>
                 <p className="text-blue-400 font-semibold mb-2">{method.value}</p>
                 <p className="text-gray-400 text-sm">{method.description}</p>
-              </div>
+              </a>
             ))}
           </div>
         </div>

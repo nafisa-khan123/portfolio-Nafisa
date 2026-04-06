@@ -22,33 +22,51 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <Link 
               href="/" 
-              className={`text-sm font-medium transition-colors duration-200 ${
+              className={`text-lg font-medium transition-all duration-300 relative group pb-1 ${
                 isActive('/') 
                   ? 'text-blue-400' 
                   : 'text-white/80 hover:text-white'
               }`}
             >
               Home
+              <span className={`absolute -bottom-0 left-1/2 h-1 bg-gradient-to-r from-blue-500 via-blue-400 to-purple-500 transition-all duration-500 ease-out rounded-full blur-[1px] opacity-80 ${
+                isActive('/') ? 'w-full left-0' : 'w-0 group-hover:w-full group-hover:left-0'
+              }`}></span>
+              <span className={`absolute -bottom-0 left-1/2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-500 ease-out rounded-full ${
+                isActive('/') ? 'w-full left-0' : 'w-0 group-hover:w-full group-hover:left-0'
+              }`}></span>
             </Link>
             <Link 
               href="/about" 
-              className={`text-sm font-medium transition-colors duration-200 ${
+              className={`text-lg font-medium transition-all duration-300 relative group pb-1 ${
                 isActive('/about') 
                   ? 'text-blue-400' 
                   : 'text-white/80 hover:text-white'
               }`}
             >
               About
+              <span className={`absolute -bottom-0 left-1/2 h-1 bg-gradient-to-r from-blue-500 via-blue-400 to-purple-500 transition-all duration-500 ease-out rounded-full blur-[1px] opacity-80 ${
+                isActive('/about') ? 'w-full left-0' : 'w-0 group-hover:w-full group-hover:left-0'
+              }`}></span>
+              <span className={`absolute -bottom-0 left-1/2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-500 ease-out rounded-full ${
+                isActive('/about') ? 'w-full left-0' : 'w-0 group-hover:w-full group-hover:left-0'
+              }`}></span>
             </Link>
             <Link 
               href="/contact" 
-              className={`text-sm font-medium transition-colors duration-200 ${
+              className={`text-lg font-medium transition-all duration-300 relative group pb-1 ${
                 isActive('/contact') 
                   ? 'text-blue-400' 
                   : 'text-white/80 hover:text-white'
               }`}
             >
               Contact
+              <span className={`absolute -bottom-0 left-1/2 h-1 bg-gradient-to-r from-blue-500 via-blue-400 to-purple-500 transition-all duration-500 ease-out rounded-full blur-[1px] opacity-80 ${
+                isActive('/contact') ? 'w-full left-0' : 'w-0 group-hover:w-full group-hover:left-0'
+              }`}></span>
+              <span className={`absolute -bottom-0 left-1/2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-500 ease-out rounded-full ${
+                isActive('/contact') ? 'w-full left-0' : 'w-0 group-hover:w-full group-hover:left-0'
+              }`}></span>
             </Link>
           </div>
 
@@ -73,7 +91,7 @@ export default function Navbar() {
             <div className="px-2 pt-2 pb-3 space-y-1 bg-black/20 backdrop-blur-lg">
               <Link 
                 href="/" 
-                className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                className={`block px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200 ${
                   isActive('/') 
                     ? 'text-blue-400 bg-white/10' 
                     : 'text-white/80 hover:text-white hover:bg-white/10'
@@ -84,7 +102,7 @@ export default function Navbar() {
               </Link>
               <Link 
                 href="/about" 
-                className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                className={`block px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200 ${
                   isActive('/about') 
                     ? 'text-blue-400 bg-white/10' 
                     : 'text-white/80 hover:text-white hover:bg-white/10'
@@ -95,7 +113,7 @@ export default function Navbar() {
               </Link>
               <Link 
                 href="/contact" 
-                className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                className={`block px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200 ${
                   isActive('/contact') 
                     ? 'text-blue-400 bg-white/10' 
                     : 'text-white/80 hover:text-white hover:bg-white/10'

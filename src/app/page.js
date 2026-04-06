@@ -2,8 +2,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import AnimatedCircle from './components/AnimatedCircle';
-import { FaHandPaper, FaEnvelope, FaJs, FaReact, FaNodeJs, FaHtml5, FaFigma, FaExternalLinkAlt, FaGithub, FaStar } from 'react-icons/fa';
-import { SiNextdotjs } from 'react-icons/si';
+import { FaHandPaper, FaEnvelope, FaJs, FaReact, FaNodeJs, FaHtml5, FaFigma, FaExternalLinkAlt, FaGithub, FaStar, FaWordpress, FaGitAlt } from 'react-icons/fa';
+import { SiNextdotjs, SiC } from 'react-icons/si';
 
 export default function Home() {
   const [currentText, setCurrentText] = useState('');
@@ -20,6 +20,10 @@ export default function Home() {
     { name: 'HTML/CSS', level: 95, color: 'bg-orange-500', icon: <FaHtml5 className="text-orange-500" /> },
     { name: 'Figma', level: 85, color: 'bg-purple-500', icon: <FaFigma className="text-purple-500" /> },
     { name: 'Prototyping', level: 80, color: 'bg-cyan-500', icon: <FaFigma className="text-cyan-500" /> },
+    { name: 'WordPress', level: 90, color: 'bg-blue-600', icon: <FaWordpress className="text-blue-600" /> },
+    { name: 'Git', level: 30, color: 'bg-orange-600', icon: <FaGitAlt className="text-orange-600" /> },
+    { name: 'GitHub', level: 30, color: 'bg-gray-400', icon: <FaGithub className="text-gray-400" /> },
+    { name: 'C Language', level: 50, color: 'bg-blue-700', icon: <SiC className="text-blue-700" /> },
   ];
 
   const experiences = [
@@ -121,7 +125,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 relative z-10">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="text-left">
             {/* Greeting */}
             <div className="flex items-center mb-8">
